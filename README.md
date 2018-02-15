@@ -10,7 +10,7 @@ Simple script to use Waveshare GSM/GPRS/GNSS/Bluetooth HAT for Raspberry Pi GPS 
 * status = show gps timesync settings, gps power status and location fix status
 * poweron = power on gps functions
 * poweroff = power off gps functions
-* towertimesync = adjust clock from cellular tower
+* towertimesync = adjust clock from cellular tower. With initially correct time satellites found faster.
 
 ### Output
 
