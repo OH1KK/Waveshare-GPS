@@ -6,7 +6,7 @@ Simple script to use Waveshare GSM/GPRS/GNSS/Bluetooth HAT for Raspberry Pi GPS 
     ./gps.sh  {loc|time|status|poweron|poweroff|towertimesync}
 
 * loc = show current location
-* time = show gps time
+* time = show time
 * status = show gps timesync settings, gps power status and location fix status
 * poweron = power on gps functions
 * poweroff = power off gps functions
