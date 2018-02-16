@@ -18,12 +18,30 @@
 
 tty=/dev/ttyAMA0
 
+function DecodeLine() {
+	echo ""
+	DESC=(GNSSrunstatus Fixstatus UTCdatetime latitude logitude altitude speedOTG course fixmode Reserved1 HDOP PDOP VDOP Reserverd2 GNSSsatellitesinview GNSSsatellitesused GLONASSsatellitesused Reserved3 cn0max HPA VPA)
+	DATA="${1//+CGNSINF: /}"
+	#DATA="${DATA//,,/x x"}"
+	#arrIN="${DATA//,/ }"
+	IFS=','
+	for i in $DATA; do
+		echo -n "  ${DESC[0]}"
+		DESC=("${DESC[@]:1}")
+		echo -n " "
+		echo "$i"
+	done
+}
+
 function SerialWriteAndRead() {
 	exec 4<$tty 5>$tty
-        stty -F $tty 9600 -echo
+        stty -F $tty 9600 
 	echo "$1" >&5
-	while IFS='' read -t 1 -r line || [[ -n "$line" ]]; do
+	while IFS='' read -t 1 -r line || [[ -n "$line"  ]]; do
 	    echo "$line"
+	    if [[ "$line" == +CGNSINF* ]]; then
+	    	DecodeLine "$line"
+	    fi
 	done <&4
 }
 
