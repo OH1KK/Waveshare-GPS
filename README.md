@@ -19,10 +19,33 @@ Is raw AT command output
 ````
 pi@raspberry:~$ ./gps.sh loc
 AT+CGNSINF
-+CGNSINF: 1,1,20180215225911.000,62.551119,21.735403,74.602,0.00,269.4,1,,0.8,1.2,0.9,,14,11,,,41,,
++CGNSINF: 1,1,20180216003145.000,62.455111,22.615210,70.723,0.00,301.3,1,,0.7,1.0,0.7,,14,12,,,34,,
+
+  GNSSrunstatus 1
+  Fixstatus 1
+  UTCdatetime 20180216003145.000
+  latitude 62.455111
+  logitude 22.615210
+  altitude 70.723
+  speedOTG 0.00
+  course 301.3
+  fixmode 1
+  Reserved1 
+  HDOP 0.7
+  PDOP 1.0
+  VDOP 0.7
+  Reserverd2 
+  GNSSsatellitesinview 14
+  GNSSsatellitesused 12
+  GLONASSsatellitesused 
+  Reserved3 
+  cn0max 34
+  HPA 
+  VPA 
 
 OK
 pi@raspberry:~$ 
+
 ````
 
 ### More info
