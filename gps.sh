@@ -22,8 +22,6 @@ function DecodeLine() {
 	echo ""
 	DESC=(GNSSrunstatus Fixstatus UTCdatetime latitude logitude altitude speedOTG course fixmode Reserved1 HDOP PDOP VDOP Reserverd2 GNSSsatellitesinview GNSSsatellitesused GLONASSsatellitesused Reserved3 cn0max HPA VPA)
 	DATA="${1//+CGNSINF: /}"
-	#DATA="${DATA//,,/x x"}"
-	#arrIN="${DATA//,/ }"
 	IFS=','
 	for i in $DATA; do
 		echo -n "  ${DESC[0]}"
