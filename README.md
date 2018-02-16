@@ -14,7 +14,7 @@ Simple script to use Waveshare GSM/GPRS/GNSS/Bluetooth HAT for Raspberry Pi GPS 
 
 ### Output
 
-Is raw AT command output
+loc command outputs raw AT command, response and decoded data
 
 ````
 pi@raspberry:~$ ./gps.sh loc
@@ -47,6 +47,7 @@ OK
 pi@raspberry:~$ 
 
 ````
+Other commands outputs raw AT command and reply
 
 ### More info
 
